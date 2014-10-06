@@ -1,0 +1,23 @@
+{
+  "name": "y0ungk/php-encryption",
+  "description": "PHP AES encryption in CFB with dual key support",
+  "license": "MIT",
+  "keywords": ["security", "encryption", "AES", "mcrypt", "cipher"],
+  "authors": [
+    {
+      "name": "Young K"
+    }
+  ],
+  "require": {
+    "php": ">=5.3.3",
+    "ext-mcrypt": "*"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "4.2.*"
+  },
+  "autoload": {
+    "psr-0": {
+      "y0ungk\\Encryption": "src/"
+    }
+  }
+}
