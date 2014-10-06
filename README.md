@@ -1,4 +1,4 @@
-# PHP Encryption
+# PHP Encryption [![Build Status](https://travis-ci.org/y0ungk/php-encryption.svg?branch=master)](https://travis-ci.org/y0ungk/php-encryption)
 
 Wrapper for encryption algorithms using PHP's [mcrypt](http://php.net/manual/en/book.mcrypt.php) library.
 
