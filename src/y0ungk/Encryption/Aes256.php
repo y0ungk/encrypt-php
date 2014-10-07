@@ -4,7 +4,6 @@ namespace y0ungk\Encryption;
 
 class Aes256 {
     const KEY_SIZE = 32;
-    const SIG_SIZE = 32;
 
     private $aesKey;
     private $hmacKey;
@@ -25,9 +24,10 @@ class Aes256 {
 
     public function decrypt($message) {
         $bits = base64_decode($message);
-        $iv = substr($bits, 0, self::KEY_SIZE);
-        $digest = substr($bits, -self::SIG_SIZE);
-        $cryptotext = substr($bits, self::KEY_SIZE, -self::SIG_SIZE);
+        $iv_size = mcrypt_get_iv_size(MCRYPT_RIJNDAEL_128, MCRYPT_MODE_CFB);
+        $iv = substr($bits, 0, $iv_size);
+        $digest = substr($bits, -self::KEY_SIZE);
+        $cryptotext = substr($bits, $iv_size, -self::KEY_SIZE);
 
         $decrypted = null;
         if ($digest == hash_hmac("sha256", $iv . $cryptotext, $this->hmacKey, true)) {

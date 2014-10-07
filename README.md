@@ -8,11 +8,11 @@ Wrapper for encryption algorithms using PHP's [mcrypt](http://php.net/manual/en/
 ## Usage
 
 ```php
-    use y0ungk\Encryption\AES256;
+    use y0ungk\Encryption\Aes256;
     $aesKey = openssl_random_pseudo_bytes(AES256::KEY_SIZE);
     $hmacKey = openssl_random_pseudo_bytes(AES256::KEY_SIZE);
-	$encryptor = new AES256($aesKey, $hmacKey);
-    $encryptedMessage = $encryptor->encrypt($plaintext);
+	$encryption = new Aes256($aesKey, $hmacKey);
+    $encryptedMessage = $encryption->encrypt($plaintext);
 ```
 
 ## Resources
